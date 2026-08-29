@@ -1,0 +1,45 @@
+[project]
+name = "botff"
+dynamic = ["version"]
+description = "Aimbot GUI application package"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "TanmoyTheBoT", email = "tanmoysarkershuvo@gmail.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pymem>=1.14.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/TanmoyTheBoT/botff"
+Issues = "https://github.com/TanmoyTheBoT/botff/issues"
+
+[project.scripts]
+botff = "botff.main:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = {attr = "botff.version.__version__"}
+
+[dependency-groups]
+dev = [
+    "build>=1.6.0",
+    "pyinstaller>=6.22.2",
+    "twine>=7.0.0",
+]
